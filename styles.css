@@ -1,0 +1,222 @@
+﻿:root {
+    --ancho: 330px;
+    --fcq: rgb(177,16,23);
+    --gris: rgb(29,29,29);
+}
+
+.fecha{
+    border:none;
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    margin:0;
+}
+.fecha:hover{
+    background-color:lightgray;
+}
+
+body {
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+.cb:hover{cursor:not-allowed;}
+
+.test{
+    background-color:blue;
+}
+.habilitada {
+    background-color: lightgreen;
+    color: darkgreen;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    width:100%;
+    height:100%;
+}
+    .habilitada:hover {
+        filter: brightness(90%);
+    }
+
+.no-habilitada {
+    background-color: lightpink;
+    color: saddlebrown;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+    .no-habilitada:hover {
+        filter: brightness(90%);
+    }
+
+.SideBtn {
+    padding-left: 30px;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content:left;
+    align-items:center;
+    color: black;
+    font-size: 16px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    border: none;
+    border-top: solid 1px lightgray;
+}
+    .SideBtn:hover {
+        background-color:whitesmoke;
+    }
+
+.SideShown{
+    width:var(--ancho);
+    height:100vh;
+    position:absolute;
+    left:0%;
+    background-color:white;
+    z-index:999;
+
+    animation: ShowSide 0.5s;
+}
+.SideHidden {
+    width: var(--ancho);
+    height: 100vh;
+    position: absolute;
+    left: calc(0px - var(--ancho));
+    background-color: white;
+    z-index: 999;
+    animation: HideSide .5s;
+}
+
+@keyframes ShowSide{
+    from {
+        left: calc(0px - var(--ancho));
+    }
+    to {
+        left: 0%;
+    }
+}
+@keyframes HideSide{
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: calc(0px - var(--ancho));
+    }
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+    position: absolute;
+    background-color: black;
+    z-index:998;
+
+    animation: blur 0.5s;
+}
+
+.backgroundblured {
+    width: 100%;
+    height: 100%;
+    opacity: 0%;
+    position: absolute;
+    background-color: black;
+    z-index: 998;
+    visibility: hidden;
+    animation: unblur 0.5s;
+}
+
+@keyframes blur{
+    from{
+        opacity:0%;
+    }
+    to {
+        opacity: 50%;
+    }
+}
+
+@keyframes unblur {
+    from {
+        opacity: 50%;
+        visibility:visible;
+    }
+
+    to {
+        opacity: 0%;
+        visibility:hidden;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cell{
+    border-right: solid 1px lightgray;
+}
+
+.nav-btn{
+    background:none;
+    border:solid 1px transparent;
+    color:white;
+    padding-left:10px;
+    padding-right:10px;
+    height:35px;
+    border-radius:5px;
+}
+
+.nav-btn:hover {
+    background: none;
+    color: white;
+    border: solid 1px darkgrey;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.cell-header {
+    font: Helvetica;
+    font-weight:500;
+    border-collapse: collapse;
+    color: #000000;
+    text-align: center;
+    border: 1px solid lightgray;
+    background: whitesmoke;
+}
+
+.cell-hora {
+    border-collapse: collapse;
+    text-align: center;
+    width: 150px;
+    border: 1px solid lightgray;
+    background: whitesmoke;
+}
+
+.cell-content {
+    border-collapse:collapse;
+    width: 100px;
+    border: 1px solid lightgray;
+    padding: 0;
+}
+
+.reserv {
+    vertical-align: top;
+    text-align: left;
+    background: lavender;
+    width: 100%;
+    border: 0;
+}
+
+    .reserv:hover {
+        vertical-align: top;
+        text-align: left;
+        background: #DDD7FA;
+        width: 100%;
+        border: 0;
+    }
